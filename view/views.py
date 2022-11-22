@@ -1,30 +1,52 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 # Create your views here.
+
+elements = [
+    {
+    "table":"random",
+    "container":"random",
+    "prod_name":"random",
+    "buyer":"random",
+    "condition":"random",
+    "owner":"random",
+    "sold":"random",
+    "stock":"random",
+    "price":"random",
+    },
+]
+
 def index(request):
-    data = {'name':'test','group':["algo","esta","mal"]}
+    global elements
+    data = {'name':'test','group':elements}
     return render(request, "Index.html",context=data)
 
 def test(request):
+
     return HttpResponse("Prueba")
 
 def find(request):
-    data = {"some":"test: " + request.GET["test"]}
+    global elements
+    data = {'name':'test','group':elements}
 
     return render(request,"Index.html",data)
 
 import boto3
 from boto3.dynamodb.conditions import Key
 
-def putItem(table
-            ,container
-            ,prod_name
-            ,buyer
-            ,condition
-            ,owner
-            ,sold
-            ,stock
-            ,price):
+def putItem(request):
+
+    table = request.POST["table"]
+    container = request.POST["container"]
+    prod_name = request.POST["prod_name"]
+    buyer = request.POST["buyer"]
+    condition = request.POST["condition"]
+    owner = request.POST["owner"]
+    sold = request.POST["sold"]
+    stock = request.POST["stock"]
+    price = request.POST["price"]
+   
+    
 
     table.put_item(
         Item={
@@ -38,6 +60,8 @@ def putItem(table
             "price":price,
         }
     )
+
+
 
 def getItemsByCondition(table):
     resp = table.query(
