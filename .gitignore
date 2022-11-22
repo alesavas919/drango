@@ -1,0 +1,10 @@
+drango/__pycache__/__init__.cpython-310.pyc
+drango/__pycache__/settings.cpython-310.pyc
+drango/__pycache__/urls.cpython-310.pyc
+drango/__pycache__/wsgi.cpython-310.pyc
+view/__pycache__/__init__.cpython-310.pyc
+view/__pycache__/admin.cpython-310.pyc
+view/__pycache__/apps.cpython-310.pyc
+view/__pycache__/models.cpython-310.pyc
+view/__pycache__/views.cpython-310.pyc
+view/migrations/__pycache__/__init__.cpython-310.pyc
