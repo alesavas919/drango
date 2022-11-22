@@ -1,46 +1,86 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Holi</title>
+    <style>
+        .content{
+            display: block;
+            width: 1400px;
+            max-width: 100%;
+            border: 1px solid black;
+            margin: 0 auto;
+            margin-top: 150px;
+            padding: 0;
+        }
+        .formulario{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: space-around;
+            margin: 0 auto;
+            gap: 15px 0;
+            max-height: max-content;
+        }
+        .formulario div{
+            display: block;
+            border: 1px solid black;
+            width: calc((1400px / 5));
+        }
+        .formulario div p{
+        }
+        .formulario .btnGroup{
+            display: block;
+            width: 100%
+        }
+        .btnGroup button{
+            display: block;
+            margin-left: auto;
+            margin-right: 50px;
+        }
+    </style>
+    <!--<link rel="stylesheet" type="text/css" href="{% static 'indexStyles.css' %}">-->
 </head>
 <body>
-<<<<<<< HEAD
 
-    <form name="formulario" method="" action="" onClick="alert('')">
-  <!-- Datos del formulario -->
-        <p>Contenedor: <input type="text" name="container" required></p>
-    <p>Nombre del producto: <input type="text" name="prod_name" required></p>
-    <p>Comprador(es): <input type="text" name="buyer" required></p>
-    <p>Condicion: <input type="text" name="condition" required></p>
-    <p>Dueño: <input type="text" name="owner" required></p>
-    <p>Precio: <input type="text" name="price" required></p>
-    <p>Vendido(s): <input type="text" name="sold" required></p>
-    <p>Cantidad: <input type="text" name="stock" required></p>
-  <!-- Botón de envío de formulario -->
-  <input type="submit" value="Enviar formulario" />
-</form>
 
-=======
-    <h1>Hola Alejo Editame con toda</h1>
-    {{name}}
-    <br>
-    <br>
-    {% for el in group %}
-        {{el}}
+    <div class="content">
+        <form name="formulario" method="GET" class="formulario">
+            <!-- Datos del formulario -->
+                  <div><p>Nombre del producto:</p><input type="text" name="prod_name" required></div>
+                  <div><p>Contenedor:</p> <input type="text" name="container" required></div>
+                  <div><p>Comprador(es):</p> <input type="text" name="buyer" required></div>
+                  <div><p>Condicion:</p> <input type="text" name="condition" required></div>
+                  <div><p>Dueño:</p> <input type="text" name="owner" required></div>
+                  <div><p>Precio:</p> <input type="text" name="price" required></div>
+                  <div><p>Vendido(s):</p> <input type="text" name="sold" required></div>
+                  <div><p>Cantidad:</p> <input type="text" name="stock" required></div>
+            <!-- Botón de envío de formulario -->
+                  <div class="btnGroup"><button>Subir</button></div>
+          </form>
+    
+
+
+        <h1 id="externo" class="externo">Los productos</h1>
+        {{name}}
         <br>
-    {% endfor %}
-    <h2>init</h2>
-    {% if exist %}
-    <p>existe</p>
-    {% else %}
-    <p>desaparece</p>
-    {% endif %}
-    <form  action="/find/" method="GET">
-        <input type="text" name="test">
-        <button type="submit" >encuentra</button>
-    </form>
-    {{some}}
->>>>>>> feature/FunctionsFromDynamo
-</body>
+        <br>
+        {% for el in group %}
+            {{el}}
+            <br>
+        {% endfor %}
+        <h2>init</h2>
+        {% if exist %}
+        <p>existe</p>
+        {% else %}
+        <p>desaparece</p>
+        {% endif %}
+        <form  action="/find/" method="GET">
+            <input type="text" name="test">
+            <button type="submit" >encuentra</button>
+        </form>
+        {{some}}
+    </div>
 </html>

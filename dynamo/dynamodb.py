@@ -1,6 +1,6 @@
 #from boto3 import client,resource as boto3
 #import boto3
-#awscli
+#import awscli
 import boto3
 from boto3.dynamodb.conditions import Key
 
