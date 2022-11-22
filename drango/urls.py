@@ -22,4 +22,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('products/', views.index),
     path('find/',views.find),
+    path('putItem/', views.putItem),
+    path('getItemsByCondition/', views.getItemsByCondition),
+    path('getProductsByOwner/', views.getProductsByOwner),
+
 ]
