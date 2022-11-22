@@ -5,6 +5,7 @@
     <title>Holi</title>
 </head>
 <body>
+<<<<<<< HEAD
 
     <form name="formulario" method="" action="" onClick="alert('')">
   <!-- Datos del formulario -->
@@ -20,5 +21,26 @@
   <input type="submit" value="Enviar formulario" />
 </form>
 
+=======
+    <h1>Hola Alejo Editame con toda</h1>
+    {{name}}
+    <br>
+    <br>
+    {% for el in group %}
+        {{el}}
+        <br>
+    {% endfor %}
+    <h2>init</h2>
+    {% if exist %}
+    <p>existe</p>
+    {% else %}
+    <p>desaparece</p>
+    {% endif %}
+    <form  action="/find/" method="GET">
+        <input type="text" name="test">
+        <button type="submit" >encuentra</button>
+    </form>
+    {{some}}
+>>>>>>> feature/FunctionsFromDynamo
 </body>
 </html>
